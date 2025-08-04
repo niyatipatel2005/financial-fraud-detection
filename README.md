@@ -26,8 +26,7 @@ This project aims to identify fraudulent transactions from a financial dataset u
 ### 📌 Languages
 
 * ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
-* ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
-* ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
+
 
 ### 🧰 Libraries & Frameworks
 
@@ -35,6 +34,7 @@ This project aims to identify fraudulent transactions from a financial dataset u
 * ![Flask](https://img.shields.io/badge/Flask-000000?style=flat&logo=flask&logoColor=white) – Web app interface for fraud detection
 * Pandas – Data manipulation
 * Matplotlib – Visualizations
+* Streamlit - Dashboard
 
 ---
 
@@ -47,7 +47,7 @@ This project aims to identify fraudulent transactions from a financial dataset u
 - pip for installing packages
 - Git (for cloning the repo)
 
-### 🔧 Installation
+## 🔧 Installation
 
 ```bash
 git clone https://github.com/niyatipatel2005/financial-fraud-detection.git
@@ -55,24 +55,70 @@ cd financial-fraud-detection
 pip install -r requirements.txt
 ```
 
+## Download the dataset
+
+Download the dataset of financial fraud from the kaggle. 
+```bash
+https://www.kaggle.com/code/eryash15/financial-fraud-detection-using-pyspark-mllib/input
+```
+
 ## 📊 Running the Project
 
 ### 1. Train the Model
 
-Run the main notebook or training script to preprocess the dataset and train the model using Random Forest:
+Run the main notebook or training script to preprocess the dataset and train the model using Logistic Regression and Random Forest:
 
 ```bash
 # Inside your Jupyter Notebook or script
-spark-submit fraud_detection_model.py
+Financial_Fraud_Detection.ipynb
 ```
 
 ### 2. Launch the Web App
 
 ```bash
 cd fraud_detection_dashboard
-python app.py
+streamlit run app.py
 ```
 Then open http://localhost:8501 in your browser to test fraud predictions by uploading CSV files.
+
+### 🖼️ Dashboard Screenshot
+
+![Dashboard UI](images/dashboard.jpg)
+
+
+### 🧠 Feature Importance Output
+
+| Feature         | Importance |
+|----------------|------------|
+| oldbalanceOrg  | 0.5027     |
+| newbalanceDest | 0.1565     |
+| amount         | 0.1473     |
+| newbalanceOrig | 0.0973     |
+| oldbalanceDest | 0.0643     |
+| type_index     | 0.0316     |
+
+
+### 📁 Project Structure
+
+```bash
+financial-fraud-detection/
+│
+├── fraudTrain.csv                   # Sample dataset 
+├── rf_predictions_output.csv        # Model output 
+├── fraud_detection_model.ipynb      # Model training notebook
+├── fraud_detection_dashboard/
+│   ├── app.py                       # streamlit-based dashboard
+│   └── rf-predictions_output.csv
+├── requirements.txt
+└── README.md
+```
+
+### Output Images:
+
+
+![Output_1](images/Output_1.jpg)
+
+![Output_2](images/Output_2.jpg)
 
 ## Authors
 
@@ -84,5 +130,15 @@ Then open http://localhost:8501 in your browser to test fraud predictions by upl
 This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
 
 ## Acknowledgments
+
+
+We would like to thank the following for their support and inspiration throughout the project:
+
+- [Kaggle](https://www.kaggle.com/code/eryash15/financial-fraud-detection-using-pyspark-mllib/input) for providing the original dataset for financial fraud detection.
+- The open-source community for tools like Apache Spark, PySpark, and MLlib that made scalable machine learning possible.
+- Our mentors and professors for their guidance and motivation.
+- GitHub and VS Code for being the backbone of our development workflow.
+- The creators of educational blogs, tutorials, and Stack Overflow discussions that helped us overcome technical hurdles.
+
 
 Inspiration, code snippets, etc.
