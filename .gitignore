@@ -1,6 +1,6 @@
-# Ignore large datasets and output files
+# Ignore large files
 fraudTrain.*
 rf_predictions_output.*
-*.zip
 *.csv
 *.xlsx
+*.zip
