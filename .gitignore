@@ -1,4 +1,6 @@
-__pycache__/
-*.pyc
-.DS_Store
-rf_predictions_output.csv
+# Ignore large datasets and output files
+fraudTrain.*
+rf_predictions_output.*
+*.zip
+*.csv
+*.xlsx
